@@ -1,0 +1,12 @@
+common: True
+package: True
+
+name: pyimport
+version: 0.1.0
+description: Import utilities
+
+author: Joel Lefkowitz
+author_email: joellefkowitz@hotmail.com
+author_github: JoelLefkowitz
+github_url: https://github.com/JoelLefkowitz/pyimport
+twine_username: joellefkowitz 

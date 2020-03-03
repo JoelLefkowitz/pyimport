@@ -1,0 +1,37 @@
+jobs:
+  fmt:
+    command: black . --exclude venv
+    targets:
+      - all
+
+  yenv:
+    function: yenv:main
+    context:
+      yenv-file: ../environment.yml
+      env-targets:
+        - pyimport
+
+  clean:
+    function: clean:main
+    context:
+      clean_dirs:
+        - build
+        - dist
+        - pyimport.egg-info
+
+  pypi-upload:
+    function: pypi_upload:main
+    context:
+      release_type: patch
+      twine_username: joellefkowitz
+
+
+projects:
+  pyimport:
+    path: ../pyimport
+
+routines:
+  release:
+    - fmt
+    - clean
+    - pypi_upload
