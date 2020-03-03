@@ -1,7 +1,9 @@
 import os
 import unittest
 
-import sys; sys.path.append("..")
+import sys
+
+sys.path.append("..")
 from pyimport.main import get_resource
 
 

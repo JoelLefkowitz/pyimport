@@ -1,7 +1,9 @@
 import os
 import unittest
 
-import sys; sys.path.append("..")
+import sys
+
+sys.path.append("..")
 from pyimport.main import path_guard, init_guard
 
 
@@ -15,6 +17,7 @@ class TestGuards(unittest.TestCase):
         own_path = os.path.abspath(__file__)
         init = init_guard(own_path)
         self.assertTrue(init.IMPORTED)
+
 
 if __name__ == "__main__":
     unittest.main()
