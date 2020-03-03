@@ -1,1 +1,2 @@
-from main import path_guard, get_resource, init_guard
+from . import main
+from .main import path_guard, init_guard, get_resource
