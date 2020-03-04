@@ -10,7 +10,7 @@ from pyimport.main import path_guard, init_guard
 class TestGuards(unittest.TestCase):
     def test_path_guard(self) -> None:
         target_path = ".."
-        path_guard("..")
+        path_guard(__file__, "..")
         self.assertTrue(target_path in sys.path)
 
     def test_init_guard(self) -> None:

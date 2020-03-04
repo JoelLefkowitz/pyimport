@@ -3,12 +3,23 @@ from dataclasses import dataclass
 from types import ModuleType
 
 
-def path_guard(module_path: str) -> None:
+def path_guard(abs_file_path: str, module_path: str) -> None:
+    abs_module_path = os.path.abspath(os.path.join(abs_file_path, module_path))
+
     if not os.path.exists(module_path):
         raise (PathNotResolvable(module_path))
 
-    if module_path not in sys.path:
-        sys.path.append(module_path)
+    if abs_module_path not in sys.path:
+        sys.path.append(abs_module_path)
+
+
+def init_guard(abs_file_path: str) -> ModuleType:
+    folder = os.path.dirname(abs_file_path)
+    contents = os.listdir(folder)
+    if not "__init__.py" in contents:
+        raise (InitNotFound(folder))
+    else:
+        return get_resource(os.path.join(folder, "__init__.py"))
 
 
 def get_resource(abs_resource_path: str) -> ModuleType:
@@ -24,15 +35,6 @@ def get_resource(abs_resource_path: str) -> ModuleType:
         module = __import__(module_name)
 
     return module
-
-
-def init_guard(abs_file_path: str) -> ModuleType:
-    folder = os.path.dirname(abs_file_path)
-    contents = os.listdir(folder)
-    if not "__init__.py" in contents:
-        raise (InitNotFound(folder))
-    else:
-        return get_resource(os.path.join(folder, "__init__.py"))
 
 
 @dataclass
