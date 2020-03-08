@@ -1,22 +1,35 @@
-import os, sys
+import os, sys, inspect
 from dataclasses import dataclass
 from types import ModuleType
 
+def path_guard(*rel_module_paths: str) -> None:
+    frame = inspect.stack()[1]
+    source_path = frame[0].f_code.co_filename
 
-def path_guard(module_path: str) -> None:
-    if not os.path.exists(module_path):
-        raise (PathNotResolvable(module_path))
+    for rel_module_path in rel_module_paths:
+        module_path = os.path.join(source_path, rel_module_path)
+    
+        if not os.path.exists(module_path):
+            raise (PathNotResolvable(module_path))
 
-    if module_path not in sys.path:
-        sys.path.append(module_path)
+        if module_path not in sys.path:
+            sys.path.append(module_path)
+
+    # This solve ambiguity with static name clashes?
+    # If at append time there is a file with the same name in two matching paths raise a warning
+    # TODO
 
 
-def get_resource(abs_resource_path: str) -> ModuleType:
-    if not os.path.exists(abs_resource_path):
-        raise (PathNotResolvable(abs_resource_path))
+def get_resource(rel_resource_path: str) -> ModuleType:
+    frame = inspect.stack()[1]
+    source_path = frame[0].f_code.co_filename
+    resource_path = os.path.join(source_path, rel_resource_path)
 
-    module_dir = os.path.dirname(os.path.normpath(abs_resource_path))
-    module_name = os.path.basename(os.path.normpath(abs_resource_path))
+    if not os.path.exists(resource_path):
+        raise (PathNotResolvable(resource_path))
+
+    module_dir = os.path.dirname(os.path.normpath(resource_path))
+    module_name = os.path.basename(os.path.normpath(resource_path))
     if module_name.endswith(".py"):
         module_name = module_name[:-3]
 
@@ -26,9 +39,13 @@ def get_resource(abs_resource_path: str) -> ModuleType:
     return module
 
 
-def init_guard(abs_file_path: str) -> ModuleType:
-    folder = os.path.dirname(abs_file_path)
+def init_guard() -> ModuleType:
+    frame = inspect.stack()[1]
+    source_path = frame[0].f_code.co_filename
+
+    folder = os.path.dirname(source_path)
     contents = os.listdir(folder)
+
     if not "__init__.py" in contents:
         raise (InitNotFound(folder))
     else:
