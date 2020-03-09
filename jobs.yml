@@ -7,10 +7,19 @@ jobs:
   yenv:
     function: yenv:main
     context:
-      yenv-file: ../environment.yml
+      yenv-file: environment.yml
       env-targets:
         - pyimport
 
+  main-env:
+    command: export ${cat pyimport.env}
+  
+  template:
+    command: templ8 ./template.yml .
+
+  docs:
+    command: python setup.py updateDocs
+  
   clean:
     function: clean:main
     context:
@@ -22,16 +31,20 @@ jobs:
   pypi-upload:
     function: pypi_upload:main
     context:
-      release_type: minor
+      release_type: patch
       twine_username: joellefkowitz
 
+  purge:
+    command: purge pyimport joellefkowitz
 
 projects:
   pyimport:
     path: ../pyimport
 
 routines:
-  release:
+  pre-release:
     - fmt
     - clean
-    - pypi_upload
+    - docs
+
+

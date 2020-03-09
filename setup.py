@@ -19,7 +19,7 @@ class UpdateDocs(Command):
         pass
 
     def run(self) -> None:
-        subprocess.run(["sphinx-apidoc", "-o", "docs/", "src/", "tests/"])
+        subprocess.run(["sphinx-apidoc", "-o", "docs/", "pyimport/", "tests/"])
 
 
 class GenerateDocs(Command):
@@ -47,7 +47,7 @@ s = setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[],
-    entry_points={"console_scripts": [""]},
+    entry_points={"console_scripts": []},
     cmdclass={"updateDocs": UpdateDocs, "generateDocs": GenerateDocs},
     python_requires=">= 3.6",
     author="Joel Lefkowitz",

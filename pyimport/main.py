@@ -58,3 +58,5 @@ class InitNotFound(Exception):
     def __init__(self, folder) -> None:
         msg = f"The folder '{folder}' has no file called __init__.py"
         super().__init__(msg)
+    
+
