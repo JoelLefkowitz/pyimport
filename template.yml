@@ -10,3 +10,13 @@ author_email: joellefkowitz@hotmail.com
 author_github: JoelLefkowitz
 github_url: https://github.com/JoelLefkowitz/pyimport
 twine_username: joellefkowitz 
+
+readme: |
+  # Issues with appending to path:
+  * Static name clashes
+  * Repeated appends
+  * Releative paths resolving unintetionally
+  * dont work when packaging (Using parent name or .name or etc) - check this
+  * Doesn't help when getting an external resource - check this
+  * Dont work when invoking a test tool - check this
+  -> Use path guard
