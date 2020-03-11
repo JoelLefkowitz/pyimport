@@ -29,6 +29,7 @@ def get_module(rel_module_path: str) -> ModuleType:
 
 def get_object(object_name: str, rel_module_path: str) -> Any:
     module = get_module(rel_module_path)
+
     if not hasattr(module, object_name):
         raise ObjectDoesNotExist(object_name)
     else:

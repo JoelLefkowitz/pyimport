@@ -25,6 +25,6 @@ def init_guard() -> None:
     folder = os.path.dirname(source_path)
 
     if "__init__.py" not in os.listdir(folder):
-        raise (InitMissing(folder))
+        raise InitMissing(folder)
     else:
         return __import__(os.path.join(folder, "__init__.py"))
