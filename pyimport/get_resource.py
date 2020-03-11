@@ -2,7 +2,7 @@ import os
 import sys
 import inspect
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, List
 from types import ModuleType
 
 from .exceptions import ModuleDoesNotExist, ObjectDoesNotExist
@@ -40,7 +40,7 @@ def get_object(object_name: str, rel_module_path: str) -> Any:
 @dataclass
 class PathControl:
     module_dir: str
-    exit_path = field(default_factory=list)
+    exit_path: List[str] = field(default_factory=list)
 
     def __enter__(self) -> None:
         self.exit_path = sys.path.copy()
