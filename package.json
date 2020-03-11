@@ -1,6 +1,6 @@
 {
   "name": "pyimport",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Import utilities",
   "main": "index.js",
   "scripts": {
