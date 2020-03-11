@@ -2,7 +2,8 @@ import os
 import sys
 import inspect
 from dataclasses import dataclass, field
-from typing import ModuleType, Any
+from typing import Any
+from types import ModuleType
 
 from .exceptions import ModuleDoesNotExist, ObjectDoesNotExist
 
