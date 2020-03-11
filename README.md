@@ -12,29 +12,29 @@ Import utilities
 | Downloads  | ![pypi_downloads][pypi_downloads]                              |
 | Raised     | [![issues][issues]][issues_link] [![pulls][pulls]][pulls_link] |
 
-[license]: https://img.shields.io/github/license/joellefkowitz/pyimport
-[release]: https://img.shields.io/github/v/tag/joellefkowitz/pyimport
-[pypi]: https://img.shields.io/pypi/v/pyimport "PyPi"
-[pypi_link]: https://pypi.org/project/pyimport
-[python_version]: https://img.shields.io/pypi/pyversions/pyimport
-[pypi_downloads]: https://img.shields.io/pypi/dw/pyimport
-[issues]: https://img.shields.io/github/issues/joellefkowitz/pyimport "Issues"
-[issues_link]: https://github.com/JoelLefkowitz/pyimport/issues
-[pulls]: https://img.shields.io/github/issues-pr/joellefkowitz/pyimport "Pull requests"
-[pulls_link]: https://github.com/JoelLefkowitz/pyimport/pulls
+[license]: https://img.shields.io/github/license/joellefkowitz/env-cli
+[release]: https://img.shields.io/github/v/tag/joellefkowitz/env-cli
+[pypi]: https://img.shields.io/pypi/v/env-cli "PyPi"
+[pypi_link]: https://pypi.org/project/env-cli
+[python_version]: https://img.shields.io/pypi/pyversions/env-cli
+[pypi_downloads]: https://img.shields.io/pypi/dw/env-cli
+[issues]: https://img.shields.io/github/issues/joellefkowitz/env-cli "Issues"
+[issues_link]: https://github.com/JoelLefkowitz/env-cli/issues
+[pulls]: https://img.shields.io/github/issues-pr/joellefkowitz/env-cli "Pull requests"
+[pulls_link]: https://github.com/JoelLefkowitz/env-cli/pulls
 
 ### Installing
 
 Install the package from pypi:
 
 ```bash
-pip install pyimport
+pip install env-cli
 ```
 
 Alternatively, you can clone the repo:
 
 ```bash
-git clone https://github.com/JoelLefkowitz/pyimport
+git clone https://github.com/JoelLefkowitz/env-cli
 ```
 
 ## Usage
@@ -65,10 +65,10 @@ Documentation can be generated locally:
 python setup.py generateDocs
 ```
 
-Then to view the generated docs visit ./build/sphinx/html/pyimport/docs/modules.html:
+Then to view the generated docs visit ./build/sphinx/html/env-cli/docs/modules.html:
 
 ```bash
-open -a "Google Chrome" ./build/sphinx/html/pyimport/docs/modules.html
+open -a "Google Chrome" ./build/sphinx/html/env-cli/docs/modules.html
 ```
 
 ## Contributing
