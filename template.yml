@@ -2,7 +2,7 @@ common: True
 package: True
 
 name: pyimport
-version: 0.5.0
+version: 0.5.1
 description: Import utilities
 author: Joel Lefkowitz
 readme: ":purple_heart: Under costruction - This is a pre-release:purple_heart:"
