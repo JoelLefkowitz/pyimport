@@ -2,7 +2,7 @@ import os
 import sys
 import inspect
 
-from .exceptions import PathDoesNotExist, InitMissing
+from exceptions import PathDoesNotExist, InitMissing
 
 
 def path_guard(*rel_module_paths: str) -> None:
@@ -16,7 +16,7 @@ def path_guard(*rel_module_paths: str) -> None:
             raise PathDoesNotExist(module_path)
 
         if module_path not in sys.path:
-            sys.path.append(module_path)
+            sys.path.insert(0, module_path)
 
 
 def init_guard() -> None:
