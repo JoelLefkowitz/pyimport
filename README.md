@@ -1,7 +1,6 @@
-# pyimport
+# Pyimport
 
 Import utilities
-
 
 ## Status
 
@@ -12,64 +11,19 @@ Import utilities
 | Downloads  | ![pypi_downloads][pypi_downloads]                              |
 | Raised     | [![issues][issues]][issues_link] [![pulls][pulls]][pulls_link] |
 
-[license]: https://img.shields.io/github/license/joellefkowitz/env-cli
-[release]: https://img.shields.io/github/v/tag/joellefkowitz/env-cli
-[pypi]: https://img.shields.io/pypi/v/env-cli "PyPi"
-[pypi_link]: https://pypi.org/project/env-cli
-[python_version]: https://img.shields.io/pypi/pyversions/env-cli
-[pypi_downloads]: https://img.shields.io/pypi/dw/env-cli
-[issues]: https://img.shields.io/github/issues/joellefkowitz/env-cli "Issues"
-[issues_link]: https://github.com/JoelLefkowitz/env-cli/issues
-[pulls]: https://img.shields.io/github/issues-pr/joellefkowitz/env-cli "Pull requests"
-[pulls_link]: https://github.com/JoelLefkowitz/env-cli/pulls
-
 ### Installing
 
-Install the package from pypi:
+To install the package from pypi:
 
 ```bash
-pip install env-cli
+pip install pyimport
 ```
 
-Alternatively, you can clone the repo:
+Alternatively, you can clone the repo and build the package locally.
 
-```bash
-git clone https://github.com/JoelLefkowitz/env-cli
-```
-
-## Usage
+### Usage
 
 :purple_heart: Under costruction - This is a pre-release:purple_heart:
-
-## Running tests
-
-Tests are not included in the package build. Clone the repo to include all the source files.
-
-```bash
-pytest tests
-```
-
-## Docs
-
-Docs are not included in the package build. Clone the repo to include all the source files.
-
-To automatically update the documentation generation configuration:
-
-```bash
-python setup.py updateDocs
-```
-
-Documentation can be generated locally:
-
-```bash
-python setup.py generateDocs
-```
-
-Then to view the generated docs visit ./build/sphinx/html/env-cli/docs/modules.html:
-
-```bash
-open -a "Google Chrome" ./build/sphinx/html/env-cli/docs/modules.html
-```
 
 ## Contributing
 
@@ -77,9 +31,9 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this repository.
+[SemVer](http://semver.org/) is used for versioning. For a list of versions available, see the tags on this repository.
 
-Bumpversion is used to version and tag changes.
+Bump2version is used to version and tag changes.
 For example:
 
 ```bash
@@ -90,7 +44,7 @@ Releases are made on every major change.
 
 ## Author
 
-- **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz](JoelLefkowitz)
+- **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz](https://github.com/JoelLefkowitz)
 
 See also the list of contributors who participated in this project.
 
@@ -100,4 +54,19 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-None
+None yet!
+
+<!--- Table links --->
+
+[license]: https://img.shields.io/github/license/joellefkowitz/pyimport
+[release]: https://img.shields.io/github/v/tag/joellefkowitz/pyimport
+[pypi_downloads]: https://img.shields.io/pypi/dw/pyimport
+
+[pypi]: https://img.shields.io/pypi/v/pyimport "PyPi"
+[pypi_link]: https://pypi.org/project/pyimport
+
+[issues]: https://img.shields.io/github/issues/joellefkowitz/pyimport "Issues"
+[issues_link]: https://github.com/JoelLefkowitz/pyimport/issues
+
+[pulls]: https://img.shields.io/github/issues-pr/joellefkowitz/pyimport "Pull requests"
+[pulls_link]: https://github.com/JoelLefkowitz/pyimport/pulls
