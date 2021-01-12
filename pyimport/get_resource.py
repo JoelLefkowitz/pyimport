@@ -1,11 +1,14 @@
+import inspect
 import os
 import sys
-import inspect
-from dataclasses import dataclass, field
-from typing import Any, List
+from dataclasses import dataclass
+from dataclasses import field
 from types import ModuleType
+from typing import Any
+from typing import List
 
-from .exceptions import ModuleDoesNotExist, ObjectDoesNotExist
+from .exceptions import ModuleDoesNotExist
+from .exceptions import ObjectDoesNotExist
 
 
 def get_module(rel_module_path: str) -> ModuleType:

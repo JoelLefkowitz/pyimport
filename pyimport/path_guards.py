@@ -1,8 +1,9 @@
+import inspect
 import os
 import sys
-import inspect
 
-from .exceptions import PathDoesNotExist, InitMissing
+from .exceptions import InitMissing
+from .exceptions import PathDoesNotExist
 
 
 def path_guard(*rel_module_paths: str) -> None:
